@@ -52,8 +52,11 @@ class BootScene extends Phaser.Scene {
             loadingText.destroy();
         });
 
-        // Create procedural textures
+        // Create procedural textures (done in preload so they're ready for other scenes)
         this.createProceduralTextures();
+        
+        // Since we're not loading external assets, manually complete the loading
+        this.load.emit('complete');
     }
 
     create() {
