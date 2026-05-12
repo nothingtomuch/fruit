@@ -1,1 +1,32 @@
-Nothing should be ignored based on the provided file changes. The only modified file is `main.js`, which is a source code file and should not be ignored. There are no build artifacts, dependencies, or temporary files in the changes that require ignoring.
+```
+# Dependencies
+node_modules/
+
+# Editors
+.vscode/
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.bundle.js
+
+# OS generated files
+.DS_Store
+Thumbs.db
+```

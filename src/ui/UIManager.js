@@ -125,14 +125,15 @@ class UIManager {
      * Draw a heart shape
      */
     drawHeart(graphics, x, y, size) {
-        graphics.beginPath();
-        graphics.moveTo(x, y + size / 4);
-        graphics.bezierCurveTo(x, y, x - size / 2, y - size / 2, x - size / 2, y + size / 4);
-        graphics.bezierCurveTo(x - size / 2, y + size / 2, x, y + size, x, y + size);
-        graphics.bezierCurveTo(x, y + size, x + size / 2, y + size / 2, x + size / 2, y + size / 4);
-        graphics.bezierCurveTo(x + size / 2, y - size / 2, x, y, x, y + size / 4);
-        graphics.closePath();
-        graphics.fillPath();
+        // Create heart shape using circles and a triangle (Phaser-compatible)
+        const halfSize = size / 2;
+        
+        // Left hump (circle)
+        graphics.fillCircle(x - halfSize / 2, y, halfSize);
+        // Right hump (circle)
+        graphics.fillCircle(x + halfSize / 2, y, halfSize);
+        // Bottom triangle using a polygon
+        graphics.fillTriangle(x - halfSize, y, x, y + size, x + halfSize, y);
     }
 
     /**
