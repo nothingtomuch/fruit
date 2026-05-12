@@ -82,8 +82,8 @@ class NPC extends Phaser.GameObjects.Container {
                 this.createOrangeBody(graphics);
         }
         
-        this.body = graphics;
-        this.add(this.body);
+        this.graphics = graphics;
+        this.add(this.graphics);
     }
 
     /**
