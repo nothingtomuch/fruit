@@ -36,6 +36,14 @@ const gameConfig = {
 
 const game = new Phaser.Game(gameConfig);
 
+// Hide the HTML loading overlay once the game is ready
+game.events.once('ready', () => {
+    const loadingOverlay = document.getElementById('loading');
+    if (loadingOverlay) {
+        loadingOverlay.classList.add('hidden');
+    }
+});
+
 // Global game data
 window.gameData = {
     essenceSeeds: 0,
